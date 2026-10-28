@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fitrah Assidik — Junior Web Developer</title>
+<meta name="description" content="Portofolio Fitrah Assidik, junior web developer (HTML, CSS, JavaScript, PHP, Java).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{acc:'#c6f432',ink:'#0a0a0a',pan:'#131313',line:'#262626'},fontFamily:{disp:['Space Grotesk','sans-serif'],mono:['JetBrains Mono','monospace']}}}}
+</script>
+<style type="text/tailwindcss">
+@layer components{
+  .mono{@apply font-mono text-[11px] uppercase tracking-wider}
+  .card{@apply bg-pan border border-line p-5 transition duration-300 hover:border-acc/70 hover:-translate-y-1}
+  .btn{@apply inline-flex items-center gap-2 font-mono text-xs font-bold uppercase px-4 py-2.5 border border-line transition duration-200 hover:border-acc hover:text-acc}
+  .btn-acc{@apply bg-acc text-black border-acc hover:bg-white hover:text-black hover:border-white}
+  .sec{@apply max-w-6xl mx-auto px-5 py-20}
+  .h2{@apply font-disp text-4xl md:text-5xl font-bold tracking-tight mt-2}
+  .reveal{@apply opacity-0 translate-y-6 transition duration-700}
+  .reveal.in{@apply opacity-100 translate-y-0}
+  .nav-a{@apply mono px-3 py-1.5 text-neutral-400 transition hover:text-white}
+  .nav-a.on{@apply bg-acc text-black font-bold}
+  .field{@apply w-full bg-ink border border-line px-3 py-2.5 text-sm outline-none transition focus:border-acc}
+}
+</style>
+<style>
+body{background:#0a0a0a;color:#e5e5e5;font-family:'Space Grotesk',sans-serif}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.fl{animation:fl 4s ease-in-out infinite}
+.caret::after{content:'|';color:#c6f432;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.bar{width:0;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.grid-bg{background-image:linear-gradient(#1a1a1a 1px,transparent 1px),linear-gradient(90deg,#1a1a1a 1px,transparent 1px);background-size:40px 40px}
+</style>
+</head>
+<body class="antialiased">
+<div id="prog" class="fixed top-0 left-0 h-0.5 bg-acc z-[60] w-0"></div>
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-ink/85 backdrop-blur border-b border-line">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between gap-4">
+    <a href="#home" class="flex items-center gap-3">
+      <span class="w-9 h-9 bg-acc text-black font-bold grid place-items-center text-sm">FA</span>
+      <span class="leading-tight"><b class="block text-sm">Fitrah Assidik</b><span class="mono text-acc"></span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-1 border border-line p-1">
+      <a class="nav-a on" href="#home">Beranda</a><a class="nav-a" href="#about">Tentang</a><a class="nav-a" href="#services">Layanan</a><a class="nav-a" href="#portfolio">Portofolio</a><a class="nav-a" href="#contact">Kontak</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="#" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub" class="btn !px-2.5 hidden sm:inline-flex"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a><a href="#" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn" class="btn !px-2.5 hidden sm:inline-flex"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="#" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram" class="btn !px-2.5 hidden sm:inline-flex"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      <a href="#contact" class="btn btn-acc">Hire Me</a>
+      <button id="burger" class="md:hidden btn !px-3" aria-label="Menu">☰</button>
+    </div>
+  </div>
+  <nav id="mnav" class="hidden md:hidden border-t border-line px-5 py-3 flex-col gap-1">
+    <a class="nav-a" href="#home">Beranda</a><a class="nav-a" href="#about">Tentang</a><a class="nav-a" href="#services">Layanan</a><a class="nav-a" href="#portfolio">Portofolio</a><a class="nav-a" href="#contact">Kontak</a>
+  </nav>
+</header>
+
+<main>
+<!-- Hero -->
+<section id="home" class="relative grid-bg">
+  <div class="max-w-6xl mx-auto px-5 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="reveal">
+      <span class="mono inline-flex items-center gap-2 border border-line px-3 py-1.5"><i class="w-2 h-2 bg-acc rounded-full animate-pulse"></i>Open for internship / junior roles</span>
+      <h1 class="font-disp font-bold leading-[.92] tracking-tight text-6xl md:text-8xl mt-6">Halo, saya <span class="bg-acc text-black px-3 inline-block mt-2">Fitrah Assidik</span></h1>
+      <p class="mt-6 font-bold text-acc">Creative <span id="role" class="caret text-white"></span></p>
+      <p class="mt-3 text-neutral-400 max-w-lg text-sm leading-relaxed">Saya adalah seorang junior web developer dengan kemampuan HTML, CSS, JavaScript, Java, dan PHP, fokus pada pembuatan website sederhana dan responsif sambil terus meningkatkan keterampilan coding saya.</p>
+      <div class="flex flex-wrap gap-3 mt-7">
+        <a href="assets/cv.pdf" download class="btn btn-acc">↓ Download CV</a><a href="#contact" class="btn">Hubungi Saya</a>
+      </div>
+      <dl class="grid grid-cols-3 gap-4 mt-10 max-w-md border-t border-line pt-5">
+        <div><dt class="mono text-neutral-500">Experience</dt><dd class="font-bold mt-1">Junior Level</dd></div>
+        <div><dt class="mono text-neutral-500">Core Stacks</dt><dd class="font-bold text-acc mt-1"><span data-count="5">0</span> Stacks</dd></div>
+      </dl>
+    </div>
+    <div class="relative reveal" style="transition-delay:.2s">
+      <div class="relative aspect-[4/5] max-w-md mx-auto lg:ml-auto border border-line bg-gradient-to-br from-pan to-black overflow-hidden group">
+        <span class="absolute inset-0 grid place-items-center font-disp font-bold text-9xl text-line">FA</span>
+        <img src="assets/img/profile/profile-square-11.webp" alt="Fitrah Assidik" class="relative w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition duration-700" onerror="this.remove()">
+      </div>
+      <span class="mono absolute top-4 right-0 md:-right-3 bg-ink border border-line px-3 py-1.5 fl">&lt;/&gt; Code &amp; Logic</span>
+      <span class="mono absolute top-1/2 left-0 md:-left-4 bg-acc text-black font-bold px-3 py-1.5 fl" style="animation-delay:1s">✦ UI/UX Design</span>
+      <span class="mono absolute bottom-4 right-6 bg-ink border border-line px-3 py-1.5 fl" style="animation-delay:2s">● Creative Ideas</span>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="sec">
+  <h2 class="h2 reveal">Tentang Saya</h2>
+  <p class="text-neutral-400 text-sm mt-2 reveal">Sedikit cerita tentang saya, keahlian, dan perjalanan belajar saya di dunia web.</p>
+  <div class="grid lg:grid-cols-5 gap-5 mt-10">
+    <div class="lg:col-span-3 space-y-5">
+      <div class="card reveal">
+        <p class="mono text-neutral-500">Perkenalan</p>
+        <h3 class="font-disp text-2xl font-bold mt-2 leading-snug">Saya Fitrah, developer pemula yang suka membangun tampilan web yang rapi dan nyaman dipakai</h3>
+        <p class="text-neutral-400 text-sm leading-relaxed mt-4">Perjalanan saya bermula dari rasa ingin tahu yang besar terhadap bagaimana situs web modern bekerja. Melalui pembelajaran konsisten dan eksperimen otodidak, saya mulai menguasai desain-dasar web frontend dan backend sederhana.</p>
+        <p class="text-neutral-400 text-sm leading-relaxed mt-3">Saya terus mengeksplorasi arsitektur web terkini, memperdalam logika pemrograman berorientasi objek, serta mengasah kepekaan estetika desain antarmuka demi menyajikan produk digital yang optimal.</p>
+        <div class="flex gap-3 mt-5"><a href="#portfolio" class="btn btn-acc">Lihat Karya Saya</a><a href="assets/cv.pdf" download class="btn">Download CV</a></div>
+      </div>
+      <blockquote class="card reveal border-l-4 !border-l-acc"><p class="text-lg">“Membangun pengalaman yang bersih dan bermakna lewat kode yang rapi dan desain yang tenang.”</p><footer class="mono text-acc mt-3">— Fitrah Assidik</footer></blockquote>
+    </div>
+    <div class="lg:col-span-2 grid sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-5 content-start">
+      <div class="card reveal"><p class="mono flex justify-between"><span class="text-acc">HTML</span><span class="text-neutral-600">01</span></p><h4 class="font-bold mt-4">HTML &amp; CSS</h4><p class="text-xs text-neutral-400 mt-2">Struktur semantik, layout responsif, dan styling modern.</p></div>
+      <div class="card reveal"><p class="mono flex justify-between"><span class="text-acc">JS</span><span class="text-neutral-600">02</span></p><h4 class="font-bold mt-4">JavaScript</h4><p class="text-xs text-neutral-400 mt-2">Interaksi dinamis, manipulasi DOM, dan logika di browser.</p></div>
+      <div class="card reveal"><p class="mono flex justify-between"><span class="text-acc">PHP</span><span class="text-neutral-600">03</span></p><h4 class="font-bold mt-4">PHP</h4><p class="text-xs text-neutral-400 mt-2">Pemrosesan form, integrasi basis data, dan server-side.</p></div>
+      <div class="card reveal"><p class="mono flex justify-between"><span class="text-acc">Java</span><span class="text-neutral-600">04</span></p><h4 class="font-bold mt-4">Java</h4><p class="text-xs text-neutral-400 mt-2">Dasar-dasar pemrograman berorientasi objek dan algoritma.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="sec border-t border-line">
+  <h2 class="h2 reveal">Layanan</h2>
+  <p class="text-neutral-400 text-sm mt-2 reveal">Hal-hal yang bisa saya bantu kerjakan untuk mempercepat kehadiran digital Anda.</p>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
+    <div class="card reveal group"><span class="text-acc text-2xl group-hover:rotate-12 inline-block transition">▣</span><h3 class="font-bold mt-4">Pembuatan Website</h3><p class="text-xs text-neutral-400 mt-2 leading-relaxed">Website company profile, landing page, dan portofolio dengan standar kode HTML, CSS, dan JavaScript yang bersih.</p><a href="#contact" class="mono text-acc mt-4 inline-block">Diskusi →</a></div>
+    <div class="card reveal group"><span class="text-acc text-2xl group-hover:rotate-12 inline-block transition">◧</span><h3 class="font-bold mt-4">Desain Responsif</h3><p class="text-xs text-neutral-400 mt-2 leading-relaxed">Penyesuaian tata letak yang proporsional dan nyaman di berbagai perangkat: baik ponsel, tablet, maupun desktop.</p><a href="#contact" class="mono text-acc mt-4 inline-block">Diskusi →</a></div>
+    <div class="card reveal group"><span class="text-acc text-2xl group-hover:rotate-12 inline-block transition">✦</span><h3 class="font-bold mt-4">UI/UX Design</h3><p class="text-xs text-neutral-400 mt-2 leading-relaxed">Rancangan visual yang fungsional, intuitif, dan menyimpan tabel dipahami oleh pengguna akhir.</p><a href="#contact" class="mono text-acc mt-4 inline-block">Diskusi →</a></div>
+    <div class="card reveal group"><span class="text-acc text-2xl group-hover:rotate-12 inline-block transition">⌘</span><h3 class="font-bold mt-4">Backend dengan PHP</h3><p class="text-xs text-neutral-400 mt-2 leading-relaxed">Pengolahan form kontak, validasi data, dan fitur dinamis sederhana dengan integrasi basis data MySQL.</p><a href="#contact" class="mono text-acc mt-4 inline-block">Diskusi →</a></div>
+  </div>
+</section>
+
+<!-- Portfolio -->
+<section id="portfolio" class="sec border-t border-line">
+  <div class="flex flex-wrap items-end justify-between gap-4">
+    <h2 class="h2 reveal">Portofolio</h2>
+    <p class="text-neutral-400 text-sm mt-2 reveal">Beberapa proyek yang pernah saya kerjakan selama proses belajar dan eksplorasi mandiri.</p></div>
+    <div id="filters" class="flex gap-1 border border-line p-1">
+      <button data-f="all" class="nav-a on">Semua</button><button data-f="web" class="nav-a">Web</button><button data-f="ui" class="nav-a">UI/UX</button><button data-f="backend" class="nav-a">Backend</button>
+    </div>
+  </div>
+  <div id="grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10"></div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="sec border-t border-line">
+  <h2 class="h2 reveal">Kontak</h2>
+  <p class="text-neutral-400 text-sm mt-2 reveal">Punya proyek atau pertanyaan? Silakan kirim pesan. Saya akan merespons secepat mungkin.</p>
+  <div class="grid lg:grid-cols-5 gap-5 mt-10">
+    <div class="card lg:col-span-2 reveal !hover:translate-y-0 space-y-5">
+      <p class="mono text-neutral-500">Informasi Kontak</p>
+      <h3 class="font-disp text-2xl font-bold">Mari berkolaborasi</h3>
+      <p class="text-sm text-neutral-400">Terbuka untuk kesempatan kerja magang, posisi junior developer, freelance maupun diskusi santai seputar teknologi web.</p>
+      <div class="border-t border-line pt-4"><p class="mono text-neutral-500">Lokasi Domisili</p><p class="font-bold">Ende, Nusa Tenggara Timur</p><p class="text-xs text-neutral-500">Waktu setempat: <b id="clock" class="text-acc">--:--</b> WITA</p></div>
+      <div class="border-t border-line pt-4"><p class="mono text-neutral-500">Telepon / WhatsApp</p><p class="font-bold">+62 812-3456-7890</p></div>
+      <div class="border-t border-line pt-4"><p class="mono text-neutral-500">Email Resmi</p><a href="mailto:nkfitrah@gmail.com" class="font-bold hover:text-acc">nkfitrah@gmail.com</a></div>
+      <p class="mono flex justify-between border-t border-line pt-4"><span><i class="inline-block w-2 h-2 bg-acc rounded-full animate-pulse mr-2"></i>Siap menerima proyek baru</span><span class="text-acc">24/7 Online</span></p>
+    </div>
+    <form id="form" class="card lg:col-span-3 reveal !hover:translate-y-0 grid sm:grid-cols-2 gap-4" novalidate>
+      <label class="block"><span class="mono text-neutral-500">Nama Anda</span><input name="name" class="field mt-1" placeholder="Contoh: Alex Pratama" required></label>
+      <label class="block"><span class="mono text-neutral-500">Email Anda</span><input name="email" type="email" class="field mt-1" placeholder="alex@example.com" required></label>
+      <label class="block sm:col-span-2"><span class="mono text-neutral-500">Subjek</span><input name="subject" class="field mt-1" placeholder="Rencana Pembuatan Website / Penawaran Magang" required></label>
+      <label class="block sm:col-span-2"><span class="mono text-neutral-500">Pesan</span><textarea name="message" rows="5" class="field mt-1" placeholder="Tuliskan detail kebutuhan atau pertanyaan Anda di sini..." required></textarea></label>
+      <div class="sm:col-span-2 flex items-center gap-4 flex-wrap"><button class="btn btn-acc">▷ Kirim Pesan</button><p id="msg" class="text-sm"></p></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="border-t border-line">
+  <div class="max-w-6xl mx-auto px-5 py-10 grid md:grid-cols-3 gap-8">
+    <div><p class="flex items-center gap-3 font-bold"><span class="w-9 h-9 bg-acc text-black grid place-items-center text-sm">F</span>Fitrah Assidik</p><p class="text-xs text-neutral-500 mt-3 max-w-xs">Junior Software Developer berbasis di Indonesia. Fokus menyajikan pengalaman web modern, ringan, dan responsif.</p></div>
+    <div><ul class="mono mt-3 space-y-1 text-neutral-400"><li><a class="hover:text-acc" href="#home">01. Beranda</a></li><li><a class="hover:text-acc" href="#about">02. Tentang</a></li><l><li><a class="hover:text-acc" href="#portfolio">04. Portofolio</a></li><li><a class="hover:text-acc" href="#contact">05. Kontak</a></li></ul></div>
+    <div><ul class="mono mt-3 space-y-1 text-neutral-400"><li><a class="hover:text-acc inline-flex items-center gap-2" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub ↗</a></li><li><a class="hover:text-acc inline-flex items-center gap-2" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn ↗</a></li><li><a class="hover:text-acc inline-flex items-center gap-2" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>Instagram ↗</a></li><li><a class="hover:text-acc" href="mailto:fitrah.assidik@example.com">Email ↗</a></li></ul></div>
+  </div>
+  <p class="mono text-neutral-600 border-t border-line text-center py-4">© <span id="yr"></span> Fitrah Assidik. All rights reserved.</p>
+</footer>
+
+<!-- Modal -->
+<div id="modal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/80 p-5">
+  <div class="bg-pan border border-line max-w-lg w-full p-6 relative">
+    <button id="mclose" class="absolute top-3 right-4 text-xl hover:text-acc" aria-label="Tutup">✕</button>
+    <p id="mtag" class="mono text-acc"></p><h3 id="mtitle" class="font-disp text-2xl font-bold mt-1"></h3>
+    <p id="mdesc" class="text-sm text-neutral-400 mt-3 leading-relaxed"></p><p id="mtags" class="mono mt-4 flex gap-2 flex-wrap"></p>
+  </div>
+</div>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+
+// Data proyek (ganti dengan proyek asli Anda)
+const projects=[
+ {t:'Website Responsif',c:'web',tag:'HTML, CSS',img:'assets/img/portfolio/portfolio-1.webp',tags:['HTML5','CSS3','Tailwind'],d:'Template kustom dengan layout mobile-first yang rapi di semua ukuran layar.'},
+ {t:'Desain Antarmuka',c:'ui',tag:'UI/UX Design',img:'assets/img/portfolio/portfolio-2.webp',tags:['Figma','Prototype'],d:'Rancangan antarmuka dashboard dengan alur navigasi yang jelas dan ringkas.'},
+ {t:'Aplikasi Web PHP',c:'backend',tag:'PHP, MySQL',img:'assets/img/portfolio/portfolio-3.webp',tags:['PHP','MySQL','CRUD'],d:'Aplikasi dinamis dengan basis data, validasi form, dan fungsi CRUD lengkap.'},
+ {t:'Landing Page',c:'web',tag:'Bootstrap, JS',img:'assets/img/portfolio/portfolio-4.webp',tags:['JavaScript','Bootstrap'],d:'Landing page pemasaran dengan animasi scroll dan form kontak interaktif.'}
+];
+$('#grid').innerHTML=projects.map((p,i)=>`
+ <article data-c="${p.c}" data-i="${i}" class="card !p-0 cursor-pointer group reveal transition-all">
+  <div class="aspect-[4/3] overflow-hidden bg-gradient-to-br from-line to-ink grid place-items-center"><img src="${p.img}" alt="${p.t}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" onerror="this.remove()"></div>
+  <div class="p-4"><p class="mono text-neutral-500">${p.tag}</p><h3 class="font-bold mt-1">${p.t}</h3><p class="text-xs text-neutral-400 mt-2">${p.d}</p><p class="mono text-acc mt-3">Lihat detail ↗</p></div>
+ </article>`).join('');
+
+// Reveal on scroll + bars + counters
+const count=el=>{const to=+el.dataset.count;let n=0;const st=()=>{n+=Math.max(1,to/40);if(n>=to){el.textContent=to}else{el.textContent=Math.floor(n);requestAnimationFrame(st)}};st()};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;t.classList.add('in');
+  $$('.bar',t).forEach(b=>b.style.width=b.dataset.w+'%');$$('[data-count]',t).forEach(count);if(t.dataset.count)count(t);io.unobserve(t)}),{threshold:.15});
+$$('.reveal,[data-count]').forEach(el=>io.observe(el));
+$$('.card.reveal').forEach((c,i)=>c.style.transitionDelay=(i%4)*80+'ms');
+
+// Typing role
+const roles=['UI/UX Designer','Junior Web Developer','PHP & JS Learner'];let ri=0,ci=0,del=false;
+(function type(){const w=roles[ri],el=$('#role');el.textContent=w.slice(0,ci);
+ if(!del&&ci===w.length){del=true;return setTimeout(type,1400)}
+ if(del&&ci===0){del=false;ri=(ri+1)%roles.length}
+ ci+=del?-1:1;setTimeout(type,del?40:80)})();
+
+// Scrollspy + progress + mobile menu
+const links=$$('header .nav-a[href^="#"]');
+const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+$$('section[id]').forEach(s=>spy.observe(s));
+addEventListener('scroll',()=>{const h=document.documentElement;$('#prog').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+$('#burger').onclick=()=>{const m=$('#mnav');m.classList.toggle('hidden');m.classList.toggle('flex')};
+$$('#mnav a').forEach(a=>a.onclick=()=>{$('#mnav').classList.add('hidden');$('#mnav').classList.remove('flex')});
+
+// Portfolio filter
+$$('#filters button').forEach(b=>b.onclick=()=>{
+ $$('#filters button').forEach(x=>x.classList.toggle('on',x===b));
+ $$('#grid article').forEach(a=>{const show=b.dataset.f==='all'||a.dataset.c===b.dataset.f;
+  a.style.opacity=0;setTimeout(()=>{a.style.display=show?'':'none';requestAnimationFrame(()=>a.style.opacity=1)},200)})});
+
+// Modal
+const modal=$('#modal'),close=()=>{modal.classList.add('hidden');modal.classList.remove('flex')};
+$('#grid').onclick=e=>{const a=e.target.closest('article');if(!a)return;const p=projects[a.dataset.i];
+ $('#mtag').textContent=p.tag;$('#mtitle').textContent=p.t;$('#mdesc').textContent=p.d;
+ $('#mtags').innerHTML=p.tags.map(t=>`<span class="border border-line px-2 py-1">${t}</span>`).join('');
+ modal.classList.remove('hidden');modal.classList.add('flex')};
+$('#mclose').onclick=close;modal.onclick=e=>{if(e.target===modal)close()};addEventListener('keydown',e=>e.key==='Escape'&&close());
+
+// Contact form (validasi sisi klien; sambungkan ke backend/Formspree untuk mengirim sungguhan)
+$('#form').onsubmit=e=>{e.preventDefault();const f=e.target,m=$('#msg');
+ const bad=[...f.elements].filter(x=>x.required&&!x.value.trim());
+ f.querySelectorAll('.field').forEach(x=>x.classList.toggle('!border-red-500',bad.includes(x)));
+ if(bad.length){m.className='text-sm text-red-400';m.textContent='Mohon lengkapi semua kolom.';return}
+ if(!/^\S+@\S+\.\S+$/.test(f.email.value)){m.className='text-sm text-red-400';m.textContent='Format email belum benar.';return}
+ m.className='text-sm text-acc';m.textContent='✓ Terima kasih, '+f.name.value+'! Pesan Anda siap dikirim.';f.reset()};
+
+// Jam WITA + tahun
+const tick=()=>$('#clock').textContent=new Date().toLocaleTimeString('id-ID',{timeZone:'Asia/Makassar',hour:'2-digit',minute:'2-digit',hour12:false}).replace('.',':');
+tick();setInterval(tick,30000);$('#yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
